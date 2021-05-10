@@ -1,0 +1,65 @@
+/*
+
+Props - menuItems, activeItem
+
+AC:
+1) menuItems will be in following structure, when grouped by Category & List
+[
+    {
+        id: 'category-1',
+        type: 'category',
+        name: {
+            displayName: '',
+            actualName: ''
+        },
+        children: [{
+            id: 'menu-1',
+            type: 'list',
+            name: {
+                displayName: '',
+                actualName: ''
+            },
+            children: [{
+                id: 'menu-1-child-1',
+                type: 'item',
+                name: {
+                    displayName: '',
+                    actualName: ''
+                }
+            }]
+        }, {
+            id: 'menu-2',
+            type: 'list',
+            name: {
+                displayName: '',
+                actualName: ''
+            }
+        }]
+    }
+] 
+
+2) If category is not required, just group by list
+[{
+    id: 'menu-1',
+    type: 'list',
+    name: {
+        displayName: '',
+        actualName: ''
+    },
+    children: [{
+        id: 'menu-1-child-1',
+        type: 'item',
+        name: {
+            displayName: '',
+            actualName: ''
+        }
+    }]
+}, {
+    id: 'menu-2',
+    type: 'list',
+    name: {
+        displayName: '',
+        actualName: ''
+    }
+}]
+*/
