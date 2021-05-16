@@ -5,16 +5,15 @@ class VerticalNav extends React.Component {
     render() {
         return (
             <>
-                <div>Welcome to React !!!</div>
                 <ul>
                 {
                     this.props.menuList.map(menu => {
                         return (
                             <li data-testid={menu.id} key={menu.id}>
+                                {menu.name['displayName']}
                             {
-                                if(menu['children']) {
-
-                                }
+                                menu['children']
+                                && <VerticalNav menuList={menu['children']}/>
                             }
                             </li>
                         )

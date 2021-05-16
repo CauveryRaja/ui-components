@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import VerticalNav from './components/VerticalNav/VerticalNav';
 
 function App() {
+  let menus = [{
+    id: 'menu-1',
+    type: 'list',
+    name: {
+        displayName: 'About',
+        actualName: 'about'
+    },
+    children: [{
+        id: 'menu-1-child-1',
+        type: 'item',
+        name: {
+            displayName: 'Careers',
+            actualName: 'careers'
+        }
+    }]
+  }, {
+      id: 'menu-2',
+      type: 'list',
+      name: {
+          displayName: 'Contact',
+          actualName: 'contact'
+      }
+  }];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VerticalNav menuList={menus}/>
     </div>
   );
 }
