@@ -1,0 +1,14 @@
+{
+  "name": "js-ui-components",
+  "version": "1.0.0",
+  "description": "UI components developed using Vanilla JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Cauvery Raja S",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
