@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Components</title>
     <script src="components/TabView/TabView.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section class="tab-view">
-
+        <nav>
+            <a class="tab-btn" data-target="content-1">Tab 1</a>
+            <a class="tab-btn" data-target="content-2">Tab 2</a>
+            <a class="tab-btn" data-target="content-3">Tab 3</a>
+        </nav>
+        <div class="content-wrapper">
+            <p class="content" id="content-1">Lorem 1 ipsum dolor sit amet consectetur adipisicing elit.Tempora, neque.</p>
+            <p class="content" id="content-2">Lorem 2 ipsum dolor sit amet consectetur adipisicing elit.Tempora, neque.</p>
+            <p class="content" id="content-3">Lorem 3 ipsum dolor sit amet consectetur adipisicing elit.Tempora, neque.</p>
+        </div>
     </section>
 </body>
 </html>
