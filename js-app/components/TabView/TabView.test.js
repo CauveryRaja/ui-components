@@ -1,3 +1,5 @@
+var $ = require( "jquery" );
+
 document.body.innerHTML = `
     <section class="tab-view">
         <nav>
@@ -13,7 +15,22 @@ document.body.innerHTML = `
     </section>
 `;
 
-test('should display TabView', () => {
+test('should render TabView', () => {
     let tabViewComponent = document.getElementsByClassName('tab-view')[0];
     expect(tabViewComponent).toBeDefined();
+});
+
+test('should render 3 tab buttons and 3 contents', () => {
+    let tabButtons, tabContents;
+    tabButtons = document.getElementsByClassName('tab-btn');
+    tabContents = document.getElementsByClassName('content');
+    expect(tabButtons.length).toEqual(3);
+    expect(tabContents.length).toEqual(3);
+});
+
+test('should trigger click listener when clicked on tab button', () => {
+    let tabBtn = document.getElementsByClassName('tab-btn')[0];
+    $('a').trigger('click', function() {
+        console.log('Clicked...');
+    });
 });
