@@ -1,5 +1,5 @@
 import './App.css';
-import VerticalNav from './components/VerticalNav/VerticalNav';
+import VerticalNav from './components/verticalNav/VerticalNav';
 
 function App() {
   let menus = [{
@@ -19,7 +19,7 @@ function App() {
     }]
   }, {
       id: 'menu-2',
-      type: 'list',
+      type: 'item',
       name: {
           displayName: 'Contact',
           actualName: 'contact'

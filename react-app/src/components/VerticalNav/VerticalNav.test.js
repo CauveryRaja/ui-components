@@ -3,14 +3,14 @@ import VerticalNav from './VerticalNav';
 
 const flatMenus = [{
     id: 'menu-1',
-    type: 'list',
+    type: 'item',
     name: {
         displayName: 'Home',
         actualName: 'home'
     }
 }, {
     id: 'menu-2',
-    type: 'list',
+    type: 'item',
     name: {
         displayName: 'About',
         actualName: 'about'
@@ -34,7 +34,7 @@ const nestedMenus = [{
     }]
 }, {
     id: 'menu-2',
-    type: 'list',
+    type: 'item',
     name: {
         displayName: 'Contact',
         actualName: 'contact'
@@ -66,7 +66,7 @@ const nestedMenusWithCategory = [
         }]
     }, {
         id: 'menu-2',
-        type: 'list',
+        type: 'item',
         name: {
             displayName: 'Contact',
             actualName: 'contact'
@@ -97,7 +97,7 @@ const nestedMenusWithCategory = [
         }]
     }, {
         id: 'menu-2',
-        type: 'list',
+        type: 'item',
         name: {
             displayName: 'Contact',
             actualName: 'contact'
@@ -121,22 +121,19 @@ describe('', () => {
 
     it('Should render nested menus in Vertical Nav', () => {
         let { getByTestId } = render(<VerticalNav menuList={nestedMenus}/>);
-        let parentMenu, childMenu;
-        parentMenu = getByTestId('menu-1');
-        expect(parentMenu).toBeDefined();
+        expect(getByTestId('menu-1')).toBeDefined();
+        expect(getByTestId('menu-1').children[0]).toBeDefined();
         expect(getByTestId('menu-2')).toBeDefined();
-        childMenu = parentMenu.getElementsByTagName('li')[0];
-        expect(childMenu).toBeDefined();
+        expect(getByTestId('menu-2').children[0]).toBeUndefined();
 
-        expect(parentMenu.textContent).toMatch('About');
-        expect(childMenu.textContent).toMatch('Careers');
-        expect(getByTestId('menu-2').textContent).toMatch('Contact');
+        expect(getByTestId('menu-1')).toHaveTextContent('About');
+        expect(getByTestId('menu-1').children[0]).toHaveTextContent('Careers');
+        expect(getByTestId('menu-2')).toHaveTextContent('Contact');
     });
 
-    it('Should render nested menus along with Categories', () => {
-        let { getByTestId } = render(<VerticalNav menuList={nestedMenusWithCategory}/>);
-
-        expect(getByTestId('category-1')).toBeDefined();
-        expect(getByTestId('category-2')).toBeDefined();
-    });
+    // it('Should render nested menus along with Categories', () => {
+    //     let { getByTestId } = render(<VerticalNav menuList={nestedMenusWithCategory}/>);
+    //     expect(getByTestId('category-1')).toBeDefined();
+    //     expect(getByTestId('category-2')).toBeDefined();
+    // });
 });
