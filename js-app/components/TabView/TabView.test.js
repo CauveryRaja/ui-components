@@ -1,4 +1,5 @@
 var $ = require( "jquery" );
+jest.mock('./TabView');
 
 document.body.innerHTML = `
     <section class="tab-view">
@@ -30,7 +31,10 @@ test('should render 3 tab buttons and 3 contents', () => {
 
 test('should trigger click listener when clicked on tab button', () => {
     let tabBtn = document.getElementsByClassName('tab-btn')[0];
-    $('a').trigger('click', function() {
-        console.log('Clicked...');
-    });
+
+    let clickHandler = require('./TabView');
+    clickHandler.mockImplementation(() => console.log('Clicked... Test...'))
+    $(tabBtn).trigger('click');
+
+    expect(clickHandler).toBeCalledTimes(1);
 });
