@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../menuItem/MenuItem'
+import { getElementByType } from '../VerticalNav.service';
 
 class Menu extends React.Component {
     render() {
@@ -8,12 +8,7 @@ class Menu extends React.Component {
                 {this.props.label}
                 <ul>
                 {
-                    this.props.items.map(item => {
-                        return (
-                            <MenuItem id={item.id} key={item.id}
-                                active={item?.active} label={item.name.displayName} value={item.name.actualName} />
-                        )
-                    })
+                    this.props.items.map(item => getElementByType(item))
                 }
                 </ul>
             </li>
