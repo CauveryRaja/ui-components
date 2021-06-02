@@ -11,4 +11,12 @@ describe('<CollapsibleHeader />', () => {
         expect(getByTestId('title')).toBeDefined();
         expect(getByTestId('title')).toHaveTextContent('Header 1');
     });
+
+    it('should render Collapsible Header with title and be expanded', () => {
+        const { getByTestId }  = render(<CollapsibleHeader title="Header 1" expanded={true}/>);
+        expect(getByTestId('title')).toBeDefined();
+        expect(getByTestId('title')).toHaveTextContent('Header 1');
+
+        // Assert if expanded here
+    });
 })
