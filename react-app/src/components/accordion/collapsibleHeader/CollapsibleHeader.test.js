@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import CollapsibleHeader from './CollapsibleHeader';
 
 describe('<CollapsibleHeader />', () => {
@@ -17,8 +17,23 @@ describe('<CollapsibleHeader />', () => {
         expect(getByTestId('title')).toBeDefined();
         expect(getByTestId('title')).toHaveTextContent('Header 1');
 
-        // Assert if expanded here
         expect(queryByTestId('expand-btn')).toBeNull();
         expect(getByTestId('collapse-btn')).toBeDefined();
+    });
+
+    it('should toggle expand and collapse on clicking them', async () => {
+        const { queryByTestId, getByTestId }  = render(<CollapsibleHeader title="Header 1" expanded={true}/>);
+        const expandBtn = queryByTestId('expand-btn');
+        const collapseBtn = getByTestId('collapse-btn');
+
+        await fireEvent.click(collapseBtn);
+
+        expect(expandBtn).toBeDefined();
+        expect(collapseBtn).toBeNull();
+
+        await fireEvent.click(expandBtn);
+
+        expect(expandBtn).toBeNull();
+        expect(collapseBtn).toBeDefined();
     });
 })
