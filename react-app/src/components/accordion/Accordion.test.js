@@ -4,17 +4,20 @@ import Accordion from './Accordion';
 const accordionData = [{
     id: 'collapsible-1',
     title: 'Header 1',
-    content: 'Content 1, lorem anakn amalal alklklklklkl'
+    content: 'Content 1, lorem anakn amalal alklklklklkl',
+    expanded: true
 },
 {
     id: 'collapsible-2',
     title: 'Header 2',
-    content: 'Content 2, lorem anakn amalal alklklklklkl'
+    content: 'Content 2, lorem anakn amalal alklklklklkl',
+    expanded: false
 },
 {
     id: 'collapsible-3',
     title: 'Header 3',
-    content: 'Content 3, lorem anakn amalal alklklklklkl'
+    content: 'Content 3, lorem anakn amalal alklklklklkl',
+    expanded: true
 }];
 
 describe('<Accordion />', () => {
