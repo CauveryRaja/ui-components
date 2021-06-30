@@ -20,8 +20,8 @@ class Accordion extends React.Component {
 
     render() {
         return this.state.collapsibles 
-                ? this.state.collapsibles.map(elm => {
-                    return <Collapsible id={elm.id} key={elm.id}
+                ? this.state.collapsibles.map((elm, index) => {
+                    return <Collapsible id={index} key={index}
                             title={elm.title} content={elm.content} 
                             expanded={elm.expanded} 
                             toggleCollapse={this.toggleCollapse}/>;
