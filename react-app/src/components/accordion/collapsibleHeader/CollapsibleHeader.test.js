@@ -23,22 +23,23 @@ describe('<CollapsibleHeader />', () => {
         expect(getByTestId('collapse-btn')).toBeDefined();
     });
 
-    it('should toggle expand and collapse on clicking them', async () => {
-        const { queryByTestId, getByTestId }  = render(<CollapsibleHeader title="Header 1" expanded={true} 
+    it('should toggle collapse on clicking collapse button', async () => {
+        const { getByTestId }  = render(<CollapsibleHeader title="Header 1" expanded={true} 
             toggleCollapse={mockToggleCollapse}/>);
-        const expandBtn = queryByTestId('expand-btn');
         const collapseBtn = getByTestId('collapse-btn');
 
         await fireEvent.click(collapseBtn);
 
         expect(mockToggleCollapse).toHaveBeenCalledTimes(1);
-        expect(expandBtn).toBeDefined();
-        expect(collapseBtn).toBeNull();
+    });
+
+    it('should toggle collapse on clicking expand button', async () => {
+        const { getByTestId }  = render(<CollapsibleHeader title="Header 1" expanded={false} 
+            toggleCollapse={mockToggleCollapse}/>);
+        const expandBtn = getByTestId('expand-btn');
 
         await fireEvent.click(expandBtn);
 
-        expect(mockToggleCollapse).toHaveBeenCalledTimes(2);
-        expect(expandBtn).toBeNull();
-        expect(collapseBtn).toBeDefined();
+        expect(mockToggleCollapse).toHaveBeenCalledTimes(1);
     });
 })

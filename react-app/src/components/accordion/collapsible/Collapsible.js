@@ -6,7 +6,8 @@ class Collapsible extends React.Component {
         return <section data-testid={'collapsible-'+this.props.id}>
             <CollapsibleHeader title={this.props.title} 
                 expanded={this.props.expanded} toggleCollapse={this.props.toggleCollapse}/>
-            <p data-testid='content'>{this.props.content}</p>
+            { this.props.expanded 
+                && <p data-testid='content'>{this.props.content}</p> }
         </section>;
     }
 }

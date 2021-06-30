@@ -2,18 +2,18 @@ import { render } from '@testing-library/react';
 import Accordion from './Accordion';
 
 const accordionData = [{
+    title: 'Header 0',
+    content: 'Content 0, lorem anakn amalal alklklklklkl',
+    expanded: true
+},
+{
     title: 'Header 1',
     content: 'Content 1, lorem anakn amalal alklklklklkl',
-    expanded: true
+    expanded: false
 },
 {
     title: 'Header 2',
     content: 'Content 2, lorem anakn amalal alklklklklkl',
-    expanded: false
-},
-{
-    title: 'Header 3',
-    content: 'Content 3, lorem anakn amalal alklklklklkl',
     expanded: true
 }];
 
