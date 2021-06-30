@@ -7,7 +7,7 @@ class Accordion extends React.Component {
         this.state = {
             collapsibles: props.collapsibleList ?  [...props.collapsibleList]: []
         }
-        this.toggleCollapse.bind(this);
+        this.toggleCollapse = this.toggleCollapse.bind(this);
     }
 
     toggleCollapse(index) {
@@ -16,7 +16,6 @@ class Accordion extends React.Component {
         this.setState({
             collapsibles: collapsibles
         });
-        console.log(this.state);
     }
 
     render() {
