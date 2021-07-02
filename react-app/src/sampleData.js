@@ -24,7 +24,7 @@ export const navData = [{
 
 export const accordionData = [{
     title: 'Header 0',
-    content: 'Content 0, lorem anakn amalal alklklklklkl',
+    content: 'Content 0, lorem anakn amalal alklklklklkl Content 0, lorem anakn amalal alklklklklklContent 0, lorem anakn amalal alklklklklkl',
     expanded: true
 },
 {

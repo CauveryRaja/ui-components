@@ -1,4 +1,5 @@
 import React from 'react';
+import './CollapsibleHeader.css';
 
 class CollapsibleHeader extends React.Component {
 
@@ -6,7 +7,7 @@ class CollapsibleHeader extends React.Component {
 
     render() {
         return <header>
-            <h2 data-testid='title'>{this.props.title}</h2>
+            <span data-testid='title' className='title'>{this.props.title}</span>
             { 
                 this.props.expanded
                 ? <button data-testid='collapse-btn' onClick={this.clickListener}>-</button> 
