@@ -1,22 +1,60 @@
-export default [
+export const flatMenus = [
+    {
+        id: 'item-0',
+        label: 'Item 0',
+        type: 'item'
+    },
+    {
+        id: 'item-1',
+        label: 'Item 1',
+        type: 'item'
+    }
+];
+
+export const nestedMenus = [
+    {
+        id: 'item-0',
+        label: 'Item 0',
+        type: 'item'
+    },
+    {
+        id: 'menu-0',
+        label: 'Menu 0',
+        type: 'list',
+        children: [
+            {
+                id: 'menu-0.item-0',
+                label: 'Item 0',
+                type: 'item'
+            }
+        ]
+    },
+    {
+        id: 'item-1',
+        label: 'Item 1',
+        type: 'item'
+    }
+];
+
+export const nestedMenusWithCategory = [
     {
         id: 'category-0',
         label: 'Category 0',
         type: 'category'
     },
     {
-        id: 'menu-0',
-        label: 'Menu 0',
+        id: 'item-0',
+        label: 'Item 0',
         type: 'item'
     },
     {
-        id: 'menu-1',
-        label: 'Menu 1',
+        id: 'menu-0',
+        label: 'Menu 0',
         type: 'list',
         children: [
             {
-                id: 'menu-1-item-1',
-                label: 'Item 1',
+                id: 'menu-0.item-0',
+                label: 'Item 0',
                 type: 'item'
             }
         ]
@@ -27,8 +65,8 @@ export default [
         type: 'category'
     },
     {
-        id: 'menu-2',
-        label: 'Menu 2',
+        id: 'item-1',
+        label: 'Item 1',
         type: 'item'
     }
 ];
