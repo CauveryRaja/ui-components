@@ -36,6 +36,38 @@ export const nestedMenus = [
     }
 ];
 
+export const nestedMenusMultiple = [
+    {
+        id: 'item-0',
+        label: 'Item 0',
+        type: 'item'
+    },
+    {
+        id: 'menu-0',
+        label: 'Menu 0',
+        type: 'list',
+        children: [
+            {
+                id: 'menu-0.item-0',
+                label: 'Item 0',
+                type: 'item'
+            }
+        ]
+    },
+    {
+        id: 'menu-1',
+        label: 'Menu 1',
+        type: 'list',
+        children: [
+            {
+                id: 'menu-1.item-1',
+                label: 'Item 1',
+                type: 'item'
+            }
+        ]
+    },
+];
+
 export const nestedMenusWithCategory = [
     {
         id: 'category-0',

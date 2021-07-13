@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import NavigationMenu from './NavigationMenu';
-import { flatMenus, nestedMenus } from './mocks/NavigationMenu.data';
+import { flatMenus, nestedMenus, nestedMenusMultiple } from './mocks/NavigationMenu.data';
 
 describe('NavigationMenu', () => {
     it('Should render Navigation Menu', () => {
@@ -19,5 +19,14 @@ describe('NavigationMenu', () => {
         expect(getByTestId('item-1')).toBeDefined();
         expect(getByTestId('menu-0')).toBeDefined();
         expect(getByTestId('menu-0.item-0')).toBeDefined();
-    })
+    });
+
+    it('Should expand only active menu item', () => {
+        const { getByTestId } = render(<NavigationMenu menuList={nestedMenusMultiple} activeItem='menu-0.item-0'/>);
+        expect(getByTestId('item-0')).toBeDefined();
+        expect(getByTestId('menu-0')).toBeDefined();
+        expect(getByTestId('menu-0.item-0')).toBeDefined();
+        expect(getByTestId('menu-1')).toBeDefined();
+        expect(getByTestId('menu-1.item-1')).toBeNull();
+    });
 });
