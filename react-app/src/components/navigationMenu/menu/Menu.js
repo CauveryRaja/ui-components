@@ -9,8 +9,8 @@ class Menu extends React.Component {
                         case 'item': 
                             return <li key={item.id} data-testid={item.id}></li>
                         case 'list': 
-                            return <Menu key={item.id} id={item.id}
-                                    label={item.label} list={item.children}></Menu>
+                            return <Menu key={item.id} id={item.id} label={item.label} list={item.children}
+                            expanded={this.props.activeItem?.startsWith(item.id)} activeItem={this.props.activeItem}></Menu>
                     };
                 })
             }
