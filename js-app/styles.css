@@ -22,3 +22,78 @@ a.tab-btn {
     border: 1px solid grey;
     border-radius: 1px;
 }
+
+
+/* Carousel styles */
+.carousel {
+    margin: 100px 50px 50px 200px;
+}
+
+.card {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    box-shadow: 2px 1px 5px grey;
+}
+
+.card:nth-child(1n) {
+    z-index: 10;
+}
+
+.card:nth-child(2n) {
+    transform: translate(-90%);
+    z-index: 9;
+}
+
+.card:nth-child(3n) {
+    transform: translate(-180%);
+    z-index: 8;
+}
+
+.card:nth-child(4n) {
+    transform: translate(-270%);
+    z-index: 7;
+}
+
+.card:nth-child(5n) {
+    transform: translate(-360%);
+    z-index: 6;
+}
+
+.slide-out {
+    animation: slide-out 1s linear;
+}
+
+.slide-in {
+    animation: slide-in 1s linear;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: translate(-30%);
+        z-index: 10;
+    }
+    100% {
+        transform: scale(0.7) translate(30%);
+        z-index: 0;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: translate(100%);
+        z-index: 10;
+    }
+    100% {
+        transform: scale(0.6) translate(80%);
+        z-index: 0;
+    }
+}
