@@ -1,11 +1,19 @@
 // document.getElementsByClassName('tab-btn').forEach(btn => {
 //     btn.addEventListener('click', clickHandler);
 // });
+const $ = require('jquery');
+const eventHandlers = require('./EventHandlers');
 
-function clickHandler() {
+const clickHandler = () => {
     console.log('Click handler called...');
 }
 
-document.querySelector('.tab-btn').addEventListener('click', clickHandler);
+console.log(document.querySelector('.tab-btn'));
 
-module.exports = clickHandler;
+// document.querySelector('.tab-btn').addEventListener('click', clickHandler);
+
+$('.tab-btn').trigger('click', eventHandlers.clickHandler);
+
+// module.exports = {
+//     clickHandler
+// };

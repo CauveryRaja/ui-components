@@ -1,5 +1,5 @@
 var $ = require( "jquery" );
-jest.mock('./TabView');
+// jest.mock('./TabView');
 
 document.body.innerHTML = `
     <section class="tab-view">
@@ -16,6 +16,7 @@ document.body.innerHTML = `
     </section>
 `;
 
+
 test('should render TabView', () => {
     let tabViewComponent = document.getElementsByClassName('tab-view')[0];
     expect(tabViewComponent).toBeDefined();
@@ -31,10 +32,12 @@ test('should render 3 tab buttons and 3 contents', () => {
 
 test('should trigger click listener when clicked on tab button', () => {
     let tabBtn = document.getElementsByClassName('tab-btn')[0];
-
-    let clickHandler = require('./TabView');
-    clickHandler.mockImplementation(() => console.log('Clicked... Test...'))
+    require('./TabView');
+    const EventHandlers = require('./EventHandlers')
+    jest.mock('./EventHandlers');
+    // let clickHandlerMock = jest.spyOn(clickHandlerModule, 'clickHandler');
+    // clickHandler.mockImplementation(() => console.log('Clicked... Test...'))
     $(tabBtn).trigger('click');
 
-    expect(clickHandler).toBeCalledTimes(1);
+    expect(EventHandlers.clickHandler).toBeCalled();
 });
