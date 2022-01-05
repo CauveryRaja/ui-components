@@ -3,8 +3,7 @@ import './Stepper.css';
 
 const Stepper = ({ steps, onPrevious, onNext, children }) => {
 	let [currIndex, setCurrIndex] = useState(0);
-	// let progressWidth = currIndex/(steps-1)*100;
-	let [progressWidth, setProgressWidth] = useState(0);
+	let progressWidth = currIndex/(steps-1)*100;
 
 	const getIndicators = () => {
 		return new Array(steps).fill().map((_, index) => (
@@ -16,10 +15,6 @@ const Stepper = ({ steps, onPrevious, onNext, children }) => {
 			</div>
 		))
 	}
-
-	useEffect(() => {
-		setProgressWidth(currIndex/(steps-1)*100);
-	}, [currIndex]);
 
 	const previous = () => {
 		setCurrIndex(currIndex-1);
