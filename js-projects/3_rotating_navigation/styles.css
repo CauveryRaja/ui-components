@@ -28,6 +28,36 @@ li {
     list-style: none;
 }
 
+.menu-btn {
+    padding: 15px 25px 23px 15px;
+    border-bottom-right-radius: 100%;
+    z-index: 1;
+    background-color: crimson;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    cursor: pointer;
+    transition: transform 1s;
+    transform-origin: top left;
+}
+
+.close-btn {
+    padding: 15px 20px 25px 25px;
+    border-bottom-left-radius: 100%;
+    z-index: 1;
+    background-color: crimson;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -55px;
+    border: none;
+    cursor: pointer;
+    transition: transform 1s;
+    transform-origin: top right;
+}
+
 .page {
     width: 100%;
     height: 100%;
@@ -36,6 +66,7 @@ li {
     top: 0;
     left: 0;
     z-index: 0;
+    transform-origin: top left;
     transition: transform 1s;
 }
 
@@ -62,5 +93,8 @@ img {
 
 .active {
     transform: rotate(-10deg);
-    transform-origin: left;
+}
+
+.rotate {
+    transform: rotate(-90deg);
 }
