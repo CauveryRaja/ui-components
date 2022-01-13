@@ -1,0 +1,25 @@
+/* 3_Rotating_Nav start */
+
+header {
+    padding: 13px;
+    background-color: rgb(241, 241, 241);
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+}
+
+.content {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img {
+    width: 350px;
+    height: 350px;
+    margin: 30px;
+}
+
+/* 3_Rotating_Nav end */
