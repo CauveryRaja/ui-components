@@ -10,10 +10,10 @@ const RotatingNav = ({ children }) => {
 
 	return <>
 		<button className={`menu-btn ${isOpen ? 'rotate' : ''}`} onClick={clickListener}>
-			<div>S</div>
+			<div>&middot;</div>
 		</button>
 		<button className={`close-btn ${isOpen ? 'rotate' : ''}`} onClick={clickListener}>
-			<div>C</div>
+			<div>&middot;</div>
 		</button>
 		<nav>
 			<ul className={`menu ${isOpen ? 'slide-in' : ''}`}>
