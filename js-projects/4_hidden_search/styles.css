@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.search-bar {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.search-box {
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 0;
+    outline: none;
+    transition: width 1s;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.search-btn:hover {
+    background-color: rgb(235, 232, 232);
+}
+
+.visible {
+    width: 200px;
+}
