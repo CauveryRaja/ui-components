@@ -3,7 +3,8 @@ import './App.css';
 // import Accordion from './components/accordion/Accordion';
 // import { navData, accordionData } from './sampleData';
 // import Stepper from './components/2_Stepper/Stepper';
-import RotatingNav from './components/3_Rotating_Nav/RotatingNav';
+// import RotatingNav from './components/3_Rotating_Nav/RotatingNav';
+import HiddenSearch from './components/4_hidden_search/HiddenSearch';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
       </Stepper> */}
 
       {/* 3_Rotating Nav */}
-      <RotatingNav>
+      {/* <RotatingNav>
         <main>
           <header>
             <h1>Journey</h1>
@@ -42,7 +43,10 @@ function App() {
             </p>
           </div>
         </main>
-      </RotatingNav>
+      </RotatingNav> */}
+
+      {/* Hidden Search */}
+      <HiddenSearch />
     </div>
   );
 }
