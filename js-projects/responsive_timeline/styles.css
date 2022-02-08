@@ -28,9 +28,27 @@ html, body {
     border-radius: 5px;
 }
 
-.entry {
+.indicators > * {
     position: absolute;
     top: 10%;
-    left: 50%;
-    background-color: aliceblue;
+    /* Including bar width */
+    left: calc(50% + 5px);
+    padding: 10px;
+    transform: translateX(-50%);
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.contents>* {
+    position: absolute;
+    top: 10%;
+    width: 200px;
+}
+
+.contents>*:nth-child(even) {
+    left: 60%;
+}
+
+.contents>*:nth-child(odd) {
+    right: 60%;
 }
