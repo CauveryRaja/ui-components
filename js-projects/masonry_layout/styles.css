@@ -18,9 +18,9 @@ html, body {
 .card {
     /* width: 180px; */
     height: 200px;
-    display: inline-block;
-    vertical-align: top;
-    margin: 5px;
+    position: absolute;
+    /* left: 10px; */
+    /* margin: 5px; */
     background-color: lightgray;
 }
 
