@@ -7,7 +7,7 @@ let sortedCards = [];
 let cards = Array.from(document.getElementsByClassName('card'));
 cards.forEach((elm, index) => {
     elm.style.width = cardWidth + 'px';
-    elm.textContent = index;
+    elm.getElementsByClassName('indicator')[0].textContent = index;
 
     let firstRow = (index-8) < 0 ? true : false;
     if(!firstRow) {
