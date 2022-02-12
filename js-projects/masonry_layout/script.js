@@ -11,7 +11,7 @@ cards.forEach((elm, index) => {
 
     let firstRow = (index-8) < 0 ? true : false;
     if(!firstRow) {
-        sortedCards.sort((a, b) => a.bottom - b.bottom);
+        sortedCards.sort((a, b) => a.bottom === b.bottom ? a.left - b.left : a.bottom - b.bottom);
         let prevElm = sortedCards.shift();
         elm.style.left = `${prevElm.left}px`;
         elm.style.top = `${prevElm.bottom + gap}px`;
