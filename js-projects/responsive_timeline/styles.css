@@ -22,33 +22,38 @@ html, body {
     top: 2%;
     left: 50%;
     content: '';
-    width: 10px;
+    width: 5px;
     height: 95%;
     background-color: rgb(231, 230, 230);
     border-radius: 5px;
 }
 
-.indicators > * {
+.indicator {
     position: absolute;
-    top: 10%;
     /* Including bar width */
     left: calc(50% + 5px);
     padding: 10px;
     transform: translateX(-50%);
-    background-color: gray;
+    background-color: rgb(247, 247, 247);
     border-radius: 50%;
 }
 
-.contents>* {
-    position: absolute;
-    top: 10%;
-    width: 200px;
+.indicator i {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 50%;
 }
 
-.contents>*:nth-child(even) {
+.content {
+    position: absolute;
+    width: 200px;
+    text-align: center;
+}
+
+.content:nth-of-type(even) {
     left: 60%;
 }
 
-.contents>*:nth-child(odd) {
+.content:nth-of-type(odd) {
     right: 60%;
 }
