@@ -23,6 +23,7 @@ cards.forEach((elm, index) => {
         });
     }
     else {
+        elm.style.top = `${gap}px`;
         elm.style.left = index > 0 ? `${(index*cardWidth) + ((index+1)*gap)}px` : `${gap}px`;
         let currElm =  elm.getClientRects()[0];
         sortedCards.push({
