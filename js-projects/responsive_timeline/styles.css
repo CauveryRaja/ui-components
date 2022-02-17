@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 html, body {
@@ -11,20 +12,19 @@ html, body {
 
 .container {
     width: 60%;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     position: relative;
     text-align: center;
-    background-color: rgb(247, 247, 247);
+    /* background-color: rgb(247, 247, 247); */
 }
 
 .container::before {
     position: absolute;
-    top: 2%;
     left: 50%;
     content: '';
     width: 5px;
-    height: 95%;
+    height: 100%;
     background-color: rgb(231, 230, 230);
     border-radius: 5px;
 }
@@ -32,7 +32,7 @@ html, body {
 .entry {
     margin: 50px 10px;
     position: relative;
-    background-color: rgb(170, 170, 170);
+    /* background-color: rgb(170, 170, 170); */
 }
 
 .indicator {
@@ -46,49 +46,32 @@ html, body {
 
 .content {
     width: 200px;
-    margin-left: 25%;
+    margin-left: 23%;
+    transform: translateY(-7px);
+    text-align: right;
 }
 
 .entry:nth-child(odd) .content {
-    margin-left: 51%;
+    margin-left: 53%;
+    text-align: left;
+}
+
+.content span {
+    font-weight: bold;
+    display: block;
 }
 
 .time {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 40%;
+    transform: translateY(-48%);
     padding: 5px 10px;
     border-radius: 25px;
     background-color: aquamarine;
     display: inline-block;
 }
 
-/* 
-.indicator {
-    position: absolute;
-    left: calc(50% + 5px);
-    padding: 10px;
-    transform: translateX(-50%);
-    background-color: rgb(247, 247, 247);
-    border-radius: 50%;
+.entry:nth-child(even) .time {
+    left: 53%;
 }
-
-.indicator i {
-    background-color: lightgray;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.content {
-    position: absolute;
-    width: 200px;
-    text-align: center;
-}
-
-.content:nth-of-type(even) {
-    left: 60%;
-}
-
-.content:nth-of-type(odd) {
-    right: 60%;
-} */
