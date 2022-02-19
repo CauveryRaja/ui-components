@@ -54,15 +54,15 @@ html, body {
 
 .content {
     width: 200px;
-    margin-left: 23%;
+    margin: 0 auto;
+    transform: translate(-58%, -9px);
     font-size: 14px;
-    transform: translateY(-9px);
     text-align: right;
 }
 
 .entry:nth-child(odd) .content {
-    margin-left: 53%;
     text-align: left;
+    transform: translate(60%, -9px);
 }
 
 .content span {
@@ -75,8 +75,8 @@ html, body {
 .time {
     position: absolute;
     top: 0;
-    left: 40%;
-    transform: translateY(-48%);
+    left: 50%;
+    transform: translate(-130%, -48%);
     font-size: 14px;
     padding: 5px 10px;
     border-radius: 25px;
@@ -87,21 +87,20 @@ html, body {
 }
 
 .entry:nth-child(even) .time {
-    left: 53%;
+    transform: translate(40%, -48%);
 }
 
-@media only screen and (max-width: 1200px) {
-
+@media only screen and (max-width: 600px) {
     .container {
         margin: 0;
     }
 
     .entry:nth-child(even) .content, .entry:nth-child(odd) .content {
-        margin-left: 55%;
         text-align: left;
+        transform: translate(60%, -9px);
     }
 
     .entry:nth-child(even) .time, .entry:nth-child(odd) .time {
-        left: 25%;
+        transform: translate(-130%, -48%);
     }
 }
