@@ -20,7 +20,6 @@ html, body {
 .entry {
     background-color: white;
     margin: 10px;
-    display: none;
 }
 
 .entry header {
