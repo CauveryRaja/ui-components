@@ -1,28 +1,42 @@
 let container = document.getElementsByClassName('container')[0];
 
+let removedFromTop = [];
+let removedFromBottom = [];
+
 init();
 
-let entries = Array.from(container.children);
-
 window.addEventListener('scroll', (event) => {
-    // let entryRect = document.getElementById('entry-0').getBoundingClientRect();
-    // console.log(event, entryRect.top);
+    // let windowRect = document.getElementsByClassName('bar-top')[0].getBoundingClientRect();
+    // console.log(event.scrollTop, windowRect.left);
 
-    let windowRect = document.getElementsByClassName('bar-top')[0].getBoundingClientRect();
-    console.log(event.scrollTop, windowRect.left);
-
-    checkFirstElement();
+    // checkFirstElement();
 });
 
-function checkFirstElement() {
-    console.log(entries, container.children);
+function removeFirstElement() {
+    let entries = Array.from(container.children);
     if(entries[0].getBoundingClientRect().bottom < -20) {
         container.removeChild(entries[0]);
+        removedFromTop.push(entries[0]);
     }
 }
 
+function removeLastElement() {
+    let entries = Array.from(container.children);
+    let lastIndex = entries.length-1;
+    if(entries[lastIndex].getBoundingClientRect().bottom > window.innerHeight + 20) {
+        container.removeChild(entries[lastIndex]);
+        removedFromBottom.push(entries[lastIndex]);
+    }
+}
+
+function insertElementToTop() {
+    let elmToInsert = removedFromTop.pop();
+    if(elmToInsert)
+        container.insertAdjacentElement('afterbegin', elmToInsert);
+}
+
 function init() {
-    for(let i=0; i<3; i++) {
+    for(let i=0; i<5; i++) {
         let elmStr = getElementWithIndex(i);
         container.insertAdjacentHTML('beforeend', elmStr);
     }
@@ -40,17 +54,19 @@ function getElementWithIndex(index) {
 }
 
 
-// Detecting Scroll direction - yet to use
-
 var lastScrollTop = 0;
 
-// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-element.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
    if (st > lastScrollTop){
-      // downscroll code
+        console.log('Scrolling down...', window.pageYOffset, document.documentElement.scrollTop);
+        removeFirstElement();
    } else {
-      // upscroll code
+        console.log('Scrolling up...', window.pageYOffset, document.documentElement.scrollTop);
+        if(st < 100) {
+            insertElementToTop();
+        }
+        // removeLastElement();
    }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
