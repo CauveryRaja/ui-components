@@ -5,12 +5,12 @@ let removedFromBottom = [];
 
 init();
 
-window.addEventListener('scroll', (event) => {
+// window.addEventListener('scroll', (event) => {
     // let windowRect = document.getElementsByClassName('bar-top')[0].getBoundingClientRect();
     // console.log(event.scrollTop, windowRect.left);
 
     // checkFirstElement();
-});
+// });
 
 function removeFirstElement() {
     let entries = Array.from(container.children);
@@ -23,16 +23,23 @@ function removeFirstElement() {
 function removeLastElement() {
     let entries = Array.from(container.children);
     let lastIndex = entries.length-1;
-    if(entries[lastIndex].getBoundingClientRect().bottom > window.innerHeight + 20) {
+    if(entries[lastIndex].getBoundingClientRect().bottom > window.innerHeight + 200) {
+        console.log('removing last element', lastIndex, entries[lastIndex].getBoundingClientRect().bottom, window.innerHeight + 100);
         container.removeChild(entries[lastIndex]);
         removedFromBottom.push(entries[lastIndex]);
     }
 }
 
-function insertElementToTop() {
+function insertElementAtTop() {
     let elmToInsert = removedFromTop.pop();
     if(elmToInsert)
         container.insertAdjacentElement('afterbegin', elmToInsert);
+}
+
+function insertElementAtBottom() {
+    let elmToInsert = removedFromBottom.pop();
+    if(elmToInsert)
+        container.insertAdjacentElement('beforeend', elmToInsert);
 }
 
 function init() {
@@ -56,17 +63,20 @@ function getElementWithIndex(index) {
 
 var lastScrollTop = 0;
 
-document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+document.addEventListener("scroll", function() {
    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
    if (st > lastScrollTop){
-        console.log('Scrolling down...', window.pageYOffset, document.documentElement.scrollTop);
+        console.log('Scrolling down...', st);
         removeFirstElement();
-   } else {
-        console.log('Scrolling up...', window.pageYOffset, document.documentElement.scrollTop);
-        if(st < 100) {
-            insertElementToTop();
+        if(st > 200) {
+            insertElementAtBottom();
         }
-        // removeLastElement();
+   } else {
+        console.log('Scrolling up...', st);
+        if(st < 100) {
+            insertElementAtTop();
+        }
+        removeLastElement();
    }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
