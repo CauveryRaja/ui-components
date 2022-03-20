@@ -1,0 +1,13 @@
+User stories:
+* As a user, I should be able to view all my received and sent emails so that I can select and view any of them
+* As a user, I should be able to filter received mails based on categories like Important, Social, Promotions
+* As a user, I should be able to differentiate between read and unread emails
+* As a user, I should be able to search emails by subject
+* As a user, I should receive notification if any new email arrives
+
+Features:
+* Emails will be listed under Inbox and Sent
+* Filter inbox based on categories - Important, Social, Promotions
+* Show distinction between read and unread emails
+* Search functionality to search mails by subject
+* Use browser notifications to indicate new mails
