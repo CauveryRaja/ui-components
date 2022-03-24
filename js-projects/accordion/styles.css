@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.accordion {
+    width: 500px;
+}
+
+.accordion-collapsible {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.collapsible-header {
+    background-color: lightgray;
+}
+
+.collapsible-content {
+    height: 0;
+    display: none;
+    transition: all 1s;
+}
+
+.collapsible_active .collapsible-content {
+    height: 0;
+    display: block;
+}
+
+/* .collapsible-header:hover .collapsible-content {
+    height: auto;
+    display: block;
+}
+
+.collapsible-header:hover {
+
+} */
