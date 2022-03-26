@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task board</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="title">
+        <h2>Task board</h2>
+    </header>
+    <main class="container">
+        <section class="lane todo">
+            <div class="title">
+                To do
+            </div>
+            <ul class="list">
+                <li class="list-item" draggable="true">
+                    <p>Item 1</p>
+                    <div class="item-controls">
+                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </li>
+                <li class="list-item" draggable="true">
+                    <p>Item 1</p>
+                    <div class="item-controls">
+                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </li>
+            </ul>
+            <form class="input-group">
+                <input type="text" name="task" id="task">
+                <button type="submit">Add</button>
+            </form>
+            <button class="add-btn">+</button>
+        </section>
+        <section class="lane in-progress">
+            <div class="title">
+                In Progress
+            </div>
+            <ul class="list">
+            </ul>
+            <form class="input-group">
+                <input type="text" name="task" id="task">
+                <button type="submit">Add</button>
+            </form>
+            <button class="add-btn">+</button>
+        </section>
+        <section class="lane blocked">
+            <div class="title">
+                Blocked
+            </div>
+            <ul class="list">
+                <li class="list-item" draggable="true">
+                    <p>Item 1</p>
+                    <div class="item-controls">
+                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </li>
+            </ul>
+            <form class="input-group">
+                <input type="text" name="task" id="task">
+                <button type="submit">Add</button>
+            </form>
+            <button class="add-btn">+</button>
+        </section>
+        <section class="lane completed">
+            <div class="title">
+                Completed
+            </div>
+            <ul class="list">
+            </ul>
+            <form class="input-group">
+                <input type="text" name="task" id="task">
+                <button type="submit">Add</button>
+            </form>
+            <button class="add-btn">+</button>
+        </section>
+    </main>
+</body>
+</html>
