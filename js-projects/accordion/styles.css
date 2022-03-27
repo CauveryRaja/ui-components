@@ -10,10 +10,10 @@ html, body {
 }
 
 .accordion {
-    width: 500px;
+    width: 100px;
 }
 
-.accordion-collapsible {
+.collapsible {
     border: 1px solid grey;
     border-radius: 5px;
 }
@@ -23,15 +23,31 @@ html, body {
 }
 
 .collapsible-content {
+    /* width: 100px; */
     height: 0;
-    display: none;
-    transition: all 1s;
+    opacity: 0;
 }
 
-.collapsible_active .collapsible-content {
-    height: 0;
-    display: block;
+.open .collapsible-content {
+    animation: animateOpen 1s ease-in;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
+
+@keyframes animateOpen {
+    0% {
+        height: 0;
+        /* opacity: 0; */
+    }
+    100% {
+        height: 200px;
+        /* opacity: 1; */
+    }
+}
+
+/* .open .collapsible-content {
+    height: auto;
+    opacity: 1;
+} */
 
 /* .collapsible-header:hover .collapsible-content {
     height: auto;
