@@ -10,50 +10,46 @@ html, body {
 }
 
 .accordion {
-    width: 100px;
+    width: 400px;
 }
 
-.collapsible {
+.accordion__collapsible {
     border: 1px solid grey;
     border-radius: 5px;
 }
 
-.collapsible-header {
+.collapsible__header {
     background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
 }
 
-.collapsible-content {
-    /* width: 100px; */
-    height: 0;
-    opacity: 0;
+.header__openedBtn {
+    display: none;
 }
 
-.open .collapsible-content {
-    animation: animateOpen 1s ease-in;
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-}
-
-@keyframes animateOpen {
-    0% {
-        height: 0;
-        /* opacity: 0; */
-    }
-    100% {
-        height: 200px;
-        /* opacity: 1; */
-    }
-}
-
-/* .open .collapsible-content {
-    height: auto;
-    opacity: 1;
-} */
-
-/* .collapsible-header:hover .collapsible-content {
-    height: auto;
+.header__closedBtn {
     display: block;
 }
 
-.collapsible-header:hover {
+.collapsible__content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
 
-} */
+.collapsible--open .header__openedBtn {
+    display: block;
+}
+
+.collapsible--open .header__closedBtn {
+    display: none;
+}
+
+.collapsible--open .collapsible__content {
+    height: 100px;
+    opacity: 1;
+}
