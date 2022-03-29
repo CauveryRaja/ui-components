@@ -1,5 +1,7 @@
-let collapsibleHeader = document.getElementsByClassName('collapsible__header')[0];
+let collapsibleHeaders = document.getElementsByClassName('collapsible__header');
 
-collapsibleHeader.addEventListener('click', () => {
-    collapsibleHeader.parentElement.classList.toggle('collapsible--open');
+Array.from(collapsibleHeaders).forEach(header => {
+    header.addEventListener('click', () => {
+        header.parentElement.classList.toggle('collapsible--open');
+    });
 });

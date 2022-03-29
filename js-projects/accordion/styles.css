@@ -19,37 +19,31 @@ html, body {
 }
 
 .collapsible__header {
-    background-color: lightgray;
+    background-color: rgb(233, 233, 233);
     display: flex;
     justify-content: space-between;
     padding: 10px;
     cursor: pointer;
 }
 
-.header__openedBtn {
-    display: none;
-}
-
-.header__closedBtn {
-    display: block;
+.collapsible__header::after {
+    content: '+';
+    position: relative;
+    right: 10px;
 }
 
 .collapsible__content {
-    height: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 1s;
+    transition: max-height 1s, opacity 1s;
 }
 
-.collapsible--open .header__openedBtn {
-    display: block;
-}
-
-.collapsible--open .header__closedBtn {
-    display: none;
+.collapsible--open .collapsible__header::after {
+    content: '-';
 }
 
 .collapsible--open .collapsible__content {
-    height: 100px;
+    max-height: 200px;
     opacity: 1;
 }
