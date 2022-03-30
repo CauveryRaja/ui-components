@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 html, body {
@@ -9,17 +10,31 @@ html, body {
     height: 100%;
 }
 
+body {
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 36%, rgba(0,212,255,1) 100%); */
+}
+
 .accordion {
     width: 400px;
+    /* Horizontally and vertically centering the accordion */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .accordion__collapsible {
-    border: 1px solid grey;
-    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.accordion__collapsible:not(:last-child) {
+    border-bottom: none;
 }
 
 .collapsible__header {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(243, 242, 242);
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -46,4 +61,16 @@ html, body {
 .collapsible--open .collapsible__content {
     max-height: 200px;
     opacity: 1;
+}
+
+
+
+/* Content styles - To make inner content look better */
+.collapsible__header p {
+    font-size: medium;
+}
+
+.collapsible__content p {
+    font-size: small;
+    margin: 10px;
 }
