@@ -58,5 +58,23 @@ function setActiveItem(items, activeItem) {
     return found;
 }
 
+function getElements(items) {
+    let markup = '';
+    items.forEach(item => {
+        switch(item.type) {
+            case 'menu':
+                markup += `<menu${item.active ? ' class="active"' : ''}>${getElements(item.children)}</menu>`;
+                break;
+            case 'item':
+            default:
+                markup += `<a href="#"${item.active ? ' class="active"' : ''}>${item.label}</a>`;
+        }
+    })
+    return markup;
+}
+
 transformData(data);
+let markup = getElements(data);
+navElm.insertAdjacentHTML('beforeend', markup);
 console.log(data);
+console.log(markup);
