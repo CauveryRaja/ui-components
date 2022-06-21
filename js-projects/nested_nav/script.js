@@ -63,7 +63,8 @@ function getElements(items) {
     items.forEach(item => {
         switch(item.type) {
             case 'menu':
-                markup += `<menu${item.active ? ' class="active"' : ''}>${getElements(item.children)}</menu>`;
+                markup += `<button>${item.label}</button>
+                        <menu${item.active ? ' class="active"' : ''}>${getElements(item.children)}</menu>`;
                 break;
             case 'item':
             default:

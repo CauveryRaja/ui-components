@@ -4,10 +4,10 @@
     padding: 0;
 }
 
-.item {
-
+menu {
+    display: none;
 }
 
-.menu {
-    
+.active {
+    display: block;
 }
