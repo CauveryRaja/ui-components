@@ -11,7 +11,14 @@ data = [
     {
         id: 'about',
         label: 'About',
-        type: 'item'
+        type: 'menu',
+        children: [
+            {
+                id: 'company',
+                label: 'Company',
+                type: 'item'
+            }
+        ]
     },
     {
         id: 'contact',
@@ -63,15 +70,24 @@ function getElements(items) {
     items.forEach(item => {
         switch(item.type) {
             case 'menu':
-                markup += `<button>${item.label}</button>
-                        <menu${item.active ? ' class="active"' : ''}>${getElements(item.children)}</menu>`;
+                markup += `<button ${item.active ? 'class="active"' : ''} onclick="rerender('${item.id}')">${item.label}</button>
+                        <menu ${item.active ? 'class="active"' : ''}>${getElements(item.children)}</menu>`;
                 break;
             case 'item':
             default:
-                markup += `<a href="#"${item.active ? ' class="active"' : ''}>${item.label}</a>`;
+                markup += `<a href="#"${item.active ? ' class="active"' : ''} onclick="rerender(${item.id})'">${item.label}</a>`;
         }
     })
     return markup;
+}
+
+function rerender(id) {
+    console.log('hello, clicked... ', id);
+    setActiveItem(data, id);
+    let markup = getElements(data);
+    navElm.innerHTML = '';
+    navElm.insertAdjacentHTML('beforeend', markup);
+    console.log(markup, navElm);
 }
 
 transformData(data);

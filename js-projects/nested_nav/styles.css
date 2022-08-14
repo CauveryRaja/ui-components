@@ -4,10 +4,23 @@
     padding: 0;
 }
 
+nav {
+    background-color: antiquewhite;
+    width: 200px;
+}
+
 menu {
     display: none;
+    margin-left: 20px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
 }
 
 .active {
     display: block;
+    color: rgb(127, 146, 255);
 }
