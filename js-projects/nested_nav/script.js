@@ -95,3 +95,8 @@ let markup = getElements(data);
 navElm.insertAdjacentHTML('beforeend', markup);
 console.log(data);
 console.log(markup);
+
+// const nav = new NestedNav(document.getElementById('target'), data);
+// nav.setActiveItem('about');
+
+
