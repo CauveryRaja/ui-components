@@ -1,7 +1,6 @@
 class Todo {
     constructor(model) {
         this.model = model;
-
     }
 
     handleEvent(event) {
@@ -14,3 +13,5 @@ class Todo {
         this.model.update(entry, checked);
     }
 }
+
+export default Todo;
