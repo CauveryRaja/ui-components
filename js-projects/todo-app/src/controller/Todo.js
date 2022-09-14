@@ -10,6 +10,12 @@ class Todo {
     }
 
     checkListener(entry, checked) {
+        // Check this
+        // this.model.todos = [{
+        //     id: 'todo-1',
+        //     title: 'First todo',
+        //     completed: false
+        // }]
         this.model.update(entry, checked);
     }
 }
