@@ -6,6 +6,7 @@ const Game = () => {
     const [currPlayer, setCurrPlayer] = useState('X');
     const [boxValues, setBoxValues] = useState(Array(9).fill(undefined));
     const [winner, setWinner] = useState();
+    const [highlightedBoxes, setHighlightedBoxes] = useState([]);
 
     const switchPlayer = () => {
         setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
@@ -14,11 +15,11 @@ const Game = () => {
     const updateBoxValue = (index)=> {
         if(winner || boxValues[index]) return;
 
-        switchPlayer();
-
         const data = [...boxValues]
         data[index] = currPlayer;
-        setBoxValues(data)
+        setBoxValues(data);
+
+        switchPlayer();
     }
 
     useEffect(function isWinner() {
@@ -33,9 +34,12 @@ const Game = () => {
         
         for(let i=0; i<chances.length; i++) {
             const [x, y, z] = chances[i];
-
-            if(boxValues[x] === boxValues[y] && boxValues[y] === boxValues[z]) {
-                setWinner(boxValues[x])
+            if(boxValues[x] && boxValues[y] && boxValues[z]) {
+                if(boxValues[x] === boxValues[y] && boxValues[y] === boxValues[z]) {
+                    setWinner(boxValues[x])
+                    setHighlightedBoxes(chances[i])
+                    setCurrPlayer(undefined)
+                }
             }
         }
     }, [boxValues]);
@@ -44,16 +48,17 @@ const Game = () => {
         setBoxValues(Array(9).fill(undefined));
         setCurrPlayer('X');
         setWinner(undefined);
+        setHighlightedBoxes([])
     }
 
     return <div className="game-container">
         <h1>Tic Tac Toe</h1>
         <h3>Winner: {winner}</h3>
-        <div>
-            <span>Player: {currPlayer}</span>
+        <div className="control-panel">
+            <div>Player: <strong>{currPlayer}</strong></div>
             <button onClick={onReset}>Reset</button>
         </div>
-        <Board boxValues={boxValues} updateBoxValue={updateBoxValue}/>
+        <Board highlightedBoxes={highlightedBoxes} boxValues={boxValues} updateBoxValue={updateBoxValue}/>
     </div>
 }
 

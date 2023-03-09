@@ -10,3 +10,7 @@
 .box:hover {
     background-color: lightgray;
 }
+
+.box.highlight {
+    background-color: lightgreen;
+}

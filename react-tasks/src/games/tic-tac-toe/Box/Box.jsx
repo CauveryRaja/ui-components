@@ -1,7 +1,7 @@
 import './Box.css'
 
-const Box = ({value, clickListener}) => {
-    return <button className="box" onClick={clickListener}>
+const Box = ({value, highlight, clickListener}) => {
+    return <button className={`box ${highlight && 'highlight'}`} onClick={clickListener}>
         {value}
     </button>
 }
