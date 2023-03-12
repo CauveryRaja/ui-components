@@ -38,7 +38,7 @@ const Game = () => {
                 if(boxValues[x] === boxValues[y] && boxValues[y] === boxValues[z]) {
                     setWinner(boxValues[x])
                     setHighlightedBoxes(chances[i])
-                    setCurrPlayer(undefined)
+                    setCurrPlayer('-')
                 }
             }
         }
@@ -55,8 +55,8 @@ const Game = () => {
         <h1>Tic Tac Toe</h1>
         <h3>Winner: {winner}</h3>
         <div className="control-panel">
-            <div>Player: <strong>{currPlayer}</strong></div>
-            <button onClick={onReset}>Reset</button>
+            <div className="player">Player<span>{currPlayer}</span></div>
+            <button className="reset" onClick={onReset}>Reset</button>
         </div>
         <Board highlightedBoxes={highlightedBoxes} boxValues={boxValues} updateBoxValue={updateBoxValue}/>
     </div>
