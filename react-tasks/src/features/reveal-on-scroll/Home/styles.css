@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.banner {
+    background-color: lightgray;
+    width: 100%;
+    height: 100vh;
+}
+
+.cards {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    gap: 30px;
+}
+
+.card {
+    flex: 1 0 300px;
+    background-color: lightgray;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s;
+}
+
+.contact {
+    background-color: lightgray;
+    width: 100%;
+    height: 100vh;
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0px);
+}
