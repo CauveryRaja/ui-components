@@ -1,0 +1,14 @@
+.cards-grid {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 0 300px;
+  background-color: lightgray;
+  /* opacity: 0; */
+  /* transform: translateY(100px);
+  transition: all 1s; */
+}
